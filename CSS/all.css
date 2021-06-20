@@ -96,11 +96,6 @@ a {
   max-width: 1140px;
   padding: 0px 15px 0px 15px;
   margin: 0 auto;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
 }
 
 .space-between {
@@ -326,6 +321,8 @@ header h1 a img {
     -webkit-box-pack: center;
         -ms-flex-pack: center;
             justify-content: center;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
   }
 }
 
@@ -337,12 +334,28 @@ header h1 a img {
   background-position: 0px -30px;
 }
 
+@media (max-width: 768px) {
+  .item-img-1 {
+    width: 345px;
+    padding: 175px 0px;
+    margin: 0 auto;
+  }
+}
+
 .item-img-2 {
   width: 555px;
   padding: 277.5px 0px;
   background: url(https://images.unsplash.com/photo-1544468266-6a8948003cd7?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=753&q=80);
   background-size: cover;
   background-position: -130px 0px;
+}
+
+@media (max-width: 768px) {
+  .item-img-2 {
+    width: 345px;
+    padding: 175px 0px;
+    margin: 0 auto;
+  }
 }
 
 .item-img-3 {
@@ -352,12 +365,28 @@ header h1 a img {
   background-size: cover;
 }
 
+@media (max-width: 768px) {
+  .item-img-3 {
+    width: 345px;
+    padding: 175px 0px;
+    margin: 0 auto;
+  }
+}
+
 .plan-img {
   width: 555px;
   padding: 540px 0px;
   background: url(https://images.unsplash.com/photo-1542038382126-77ae2819338d?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80);
   background-size: cover;
   background-position: -100px 0px;
+}
+
+@media (max-width: 768px) {
+  .plan-img {
+    width: 345px;
+    padding: 340px 0px;
+    margin: 0 auto;
+  }
 }
 
 .product {
@@ -369,6 +398,21 @@ header h1 a img {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+}
+
+@media (max-width: 768px) {
+  .product .product-item {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
 }
 
 .product .product-item li {
@@ -471,6 +515,18 @@ header h1 a img {
   margin-bottom: 16px;
 }
 
+@media (max-width: 768px) {
+  .recycle {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+}
+
 .recycle-img {
   min-width: 730px;
   padding: 260px 0px;
@@ -559,6 +615,12 @@ footer .footer-logo p {
 }
 
 @media (max-width: 768px) {
+  footer .footer-logo {
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 768px) {
   footer .footer-menu {
     display: none;
   }
@@ -588,6 +650,12 @@ footer .footer-menu a:hover {
   background: #916000;
 }
 
+@media (max-width: 768px) {
+  .menu-brand {
+    display: none;
+  }
+}
+
 .menu-brand ul {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -613,13 +681,18 @@ footer .footer-menu a:hover {
   margin: 0 auto;
 }
 
+@media (max-width: 768px) {
+  .product-container {
+    padding: 42px 15px;
+  }
+}
+
 .product-item-container ul {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
 }
@@ -627,6 +700,12 @@ footer .footer-menu a:hover {
 .product-item-container ul li h3 {
   font-size: 24px;
   font-weight: bold;
+}
+
+@media (max-width: 768px) {
+  .product-item-container ul li h3 {
+    font-size: 20px;
+  }
 }
 
 .product-item-container .product-item-original-price {
@@ -661,12 +740,26 @@ footer .footer-menu a:hover {
   background-position: 0px -50px;
 }
 
+@media (max-width: 768px) {
+  .product-item1-img {
+    width: 165px;
+    padding: 82.5px 0px;
+  }
+}
+
 .product-item2-img {
   width: 255px;
   padding: 127.5px 0px;
   background: url(https://github.com/hexschool/webLayoutTraining1st/blob/master/perfume-week6/index6.jpg?raw=true);
   background-size: cover;
   background-position: 0px -120px;
+}
+
+@media (max-width: 768px) {
+  .product-item2-img {
+    width: 165px;
+    padding: 82.5px 0px;
+  }
 }
 
 .product-item3-img {
@@ -677,11 +770,25 @@ footer .footer-menu a:hover {
   background-position: 0px -30px;
 }
 
+@media (max-width: 768px) {
+  .product-item3-img {
+    width: 165px;
+    padding: 82.5px 0px;
+  }
+}
+
 .product-item4-img {
   width: 255px;
   padding: 127.5px 0px;
   background: url(https://github.com/hexschool/webLayoutTraining1st/blob/master/perfume-week6/products4.jpg?raw=true);
   background-size: cover;
+}
+
+@media (max-width: 768px) {
+  .product-item4-img {
+    width: 165px;
+    padding: 82.5px 0px;
+  }
 }
 
 .product-item5-img {
@@ -692,11 +799,25 @@ footer .footer-menu a:hover {
   background-position: 0px -30px;
 }
 
+@media (max-width: 768px) {
+  .product-item5-img {
+    width: 165px;
+    padding: 82.5px 0px;
+  }
+}
+
 .product-item6-img {
   width: 255px;
   padding: 127.5px 0px;
   background: url(https://github.com/hexschool/webLayoutTraining1st/blob/master/perfume-week6/index2.jpg?raw=true);
   background-size: cover;
+}
+
+@media (max-width: 768px) {
+  .product-item6-img {
+    width: 165px;
+    padding: 82.5px 0px;
+  }
 }
 
 .product-item7-img {
@@ -707,6 +828,13 @@ footer .footer-menu a:hover {
   background-position: 0px -20px;
 }
 
+@media (max-width: 768px) {
+  .product-item7-img {
+    width: 165px;
+    padding: 82.5px 0px;
+  }
+}
+
 .product-item8-img {
   width: 255px;
   padding: 127.5px 0px;
@@ -715,11 +843,25 @@ footer .footer-menu a:hover {
   background-position: -55px 0px;
 }
 
+@media (max-width: 768px) {
+  .product-item8-img {
+    width: 165px;
+    padding: 82.5px 0px;
+  }
+}
+
 .product-item9-img {
   width: 255px;
   padding: 127.5px 0px;
   background: url(https://github.com/hexschool/webLayoutTraining1st/blob/master/perfume-week6/index9.jpg?raw=true);
   background-size: cover;
+}
+
+@media (max-width: 768px) {
+  .product-item9-img {
+    width: 165px;
+    padding: 82.5px 0px;
+  }
 }
 
 .product-item10-img {
@@ -730,6 +872,13 @@ footer .footer-menu a:hover {
   background-position: -20px -20px;
 }
 
+@media (max-width: 768px) {
+  .product-item10-img {
+    width: 165px;
+    padding: 82.5px 0px;
+  }
+}
+
 .product-item11-img {
   width: 255px;
   padding: 127.5px 0px;
@@ -738,12 +887,26 @@ footer .footer-menu a:hover {
   background-position: 0px -30px;
 }
 
+@media (max-width: 768px) {
+  .product-item11-img {
+    width: 165px;
+    padding: 82.5px 0px;
+  }
+}
+
 .product-item12-img {
   width: 255px;
   padding: 127.5px 0px;
   background: url(https://github.com/hexschool/webLayoutTraining1st/blob/master/perfume-week6/products12.jpg?raw=true);
   background-size: cover;
   background-position: -30px 0px;
+}
+
+@media (max-width: 768px) {
+  .product-item12-img {
+    width: 165px;
+    padding: 82.5px 0px;
+  }
 }
 
 .product-page {

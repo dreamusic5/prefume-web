@@ -12,8 +12,6 @@ a{
     max-width: 1140px;
     padding: 0px 15px 0px 15px;
     margin: 0 auto;
-    display: flex;
-    flex-wrap: wrap;
 }
 
 //通用設定
@@ -177,9 +175,9 @@ header{
     .mobile-item{
         display: flex;
         flex-direction: column;
-        justify-content: center 
+        justify-content: center;
+        flex-wrap: wrap;
     }
-    
 }
 
 //item-container套入圖片
@@ -190,6 +188,11 @@ header{
     background:url(https://images.unsplash.com/photo-1563170351-be82bc888aa4?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=676&q=80);
     background-size: cover;
     background-position:0px -30px;
+    @media(max-width:768px){
+        width: 345px;
+        padding: 175px 0px;
+        margin: 0 auto;
+    }
 }
 .item-img-2{
     width: 555px;
@@ -197,12 +200,22 @@ header{
     background:url(https://images.unsplash.com/photo-1544468266-6a8948003cd7?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=753&q=80) ;
     background-size: cover;
     background-position:-130px 0px;
+    @media(max-width:768px){
+        width: 345px;
+        padding: 175px 0px;
+        margin: 0 auto;
+    }
 }
 .item-img-3{
     width: 555px;
     padding: 277.5px 0px;
     background:url(https://images.unsplash.com/photo-1585120040315-2241b774ad0f?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80) ;
     background-size: cover;
+    @media(max-width:768px){
+        width: 345px;
+        padding: 175px 0px;
+        margin: 0 auto;
+    }
 }
 .plan-img{
     width: 555px;
@@ -210,6 +223,11 @@ header{
     background:url(https://images.unsplash.com/photo-1542038382126-77ae2819338d?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80) ;
     background-size: cover;
     background-position:-100px 0px;
+    @media(max-width:768px){
+        width: 345px;
+        padding: 340px 0px;
+        margin: 0 auto;
+    }
 }
 
 
@@ -219,6 +237,11 @@ header{
     background: $background-color;
     .product-item{
         display: flex;
+        @media(max-width:768px){
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+         }
     }
     .product-item li{
         margin: 0px 14px;
@@ -229,7 +252,9 @@ header{
     }
     .product-brand{
         margin-bottom: 16px;
+        
     }
+
     .product-price-original{
         margin-left: 8px;
         color: $menu-main-color;
@@ -293,6 +318,10 @@ header{
     p{
         margin-bottom: 16px;
     }
+    @media(max-width:768px){
+       display: flex;
+       flex-direction: column;
+    }
 
 }
 .recycle-img{
@@ -302,7 +331,6 @@ header{
     background-size: cover;
     @media(max-width:768px){
         min-width: 345px;
-
     }
 }
 
@@ -346,7 +374,6 @@ header{
 
 //footer區塊
 footer{
-    
     background: #916000;
     color:#FFFFFF;
     .container{
@@ -364,6 +391,9 @@ footer{
         p{
             font-size: 14px;
             line-height: 21px;
+        }
+        @media (max-width:768px) {
+            margin: 0 auto;
         }
     }
     .footer-menu{
@@ -390,6 +420,9 @@ footer{
 //產品分類
 .menu-brand{
     background: #916000;
+    @media (max-width:768px){
+        display: none;
+    }
     ul{
         display: flex;
         max-width: 1110px;
@@ -410,16 +443,22 @@ footer{
     padding:80px 0px 60px 0px ;
     max-width: 1110px;
     margin: 0 auto;
+    @media (max-width:768px){
+        padding: 42px 15px;
+    }
 }
 .product-item-container{
     ul{
         display: flex;
-        justify-content: space-between;
+        justify-content: space-around;
         flex-wrap: wrap;
     }
     ul li h3{
         font-size: 24px;
         font-weight: bold;
+        @media (max-width:768px){
+            font-size: 20px;
+        }
     }
     .product-item-original-price{
         margin-left: 8px;
@@ -448,6 +487,10 @@ footer{
     background:url(https://github.com/hexschool/webLayoutTraining1st/blob/master/perfume-week6/products1.jpg?raw=true) ;
     background-size: cover;
     background-position:0px -50px;
+    @media (max-width:768px){
+        width:165px;
+        padding: 82.5px 0px;
+    }
 }
 .product-item2-img{
     width:255px;
@@ -455,6 +498,10 @@ footer{
     background:url(https://github.com/hexschool/webLayoutTraining1st/blob/master/perfume-week6/index6.jpg?raw=true) ;
     background-size: cover;
     background-position:0px -120px;
+    @media (max-width:768px){
+        width:165px;
+        padding: 82.5px 0px;
+    }
 }
 .product-item3-img{
     width:255px;
@@ -462,12 +509,20 @@ footer{
     background:url(https://github.com/hexschool/webLayoutTraining1st/blob/master/perfume-week6/products3.jpg?raw=true) ;
     background-size: cover;
     background-position:0px -30px;
+    @media (max-width:768px){
+        width:165px;
+        padding: 82.5px 0px;
+    }
 }
 .product-item4-img{
     width:255px;
     padding: 127.5px 0px;
     background:url(https://github.com/hexschool/webLayoutTraining1st/blob/master/perfume-week6/products4.jpg?raw=true) ;
     background-size: cover;
+    @media (max-width:768px){
+        width:165px;
+        padding: 82.5px 0px;
+    }
 }
 .product-item5-img{
     width:255px;
@@ -475,12 +530,20 @@ footer{
     background:url(https://github.com/hexschool/webLayoutTraining1st/blob/master/perfume-week6/products5.jpg?raw=true) ;
     background-size: cover;
     background-position:0px -30px;
+    @media (max-width:768px){
+        width:165px;
+        padding: 82.5px 0px;
+    }
 }
 .product-item6-img{
     width:255px;
     padding: 127.5px 0px;
     background:url(https://github.com/hexschool/webLayoutTraining1st/blob/master/perfume-week6/index2.jpg?raw=true) ;
     background-size: cover;
+    @media (max-width:768px){
+        width:165px;
+        padding: 82.5px 0px;
+    }
 }
 .product-item7-img{
     width:255px;
@@ -488,6 +551,10 @@ footer{
     background:url(https://github.com/hexschool/webLayoutTraining1st/blob/master/perfume-week6/products7.jpg?raw=true) ;
     background-size: cover;
     background-position:0px -20px;
+    @media (max-width:768px){
+        width:165px;
+        padding: 82.5px 0px;
+    }
 }
 .product-item8-img{
     width:255px;
@@ -495,12 +562,20 @@ footer{
     background:url(https://github.com/hexschool/webLayoutTraining1st/blob/master/perfume-week6/products8.jpg?raw=true) ;
     background-size: cover;
     background-position:-55px 0px;
+    @media (max-width:768px){
+        width:165px;
+        padding: 82.5px 0px;
+    }
 }
 .product-item9-img{
     width:255px;
     padding: 127.5px 0px;
     background:url(https://github.com/hexschool/webLayoutTraining1st/blob/master/perfume-week6/index9.jpg?raw=true) ;
     background-size: cover;
+    @media (max-width:768px){
+        width:165px;
+        padding: 82.5px 0px;
+    }
 }
 .product-item10-img{
     width:255px;
@@ -508,6 +583,10 @@ footer{
     background:url(https://github.com/hexschool/webLayoutTraining1st/blob/master/perfume-week6/products10.jpg?raw=true) ;
     background-size: cover;
     background-position:-20px -20px;
+    @media (max-width:768px){
+        width:165px;
+        padding: 82.5px 0px;
+    }
 }
 .product-item11-img{
     width:255px;
@@ -515,6 +594,10 @@ footer{
     background:url(https://github.com/hexschool/webLayoutTraining1st/blob/master/perfume-week6/products11.jpg?raw=true) ;
     background-size: cover;
     background-position:0px -30px;
+    @media (max-width:768px){
+        width:165px;
+        padding: 82.5px 0px;
+    }
 }
 .product-item12-img{
     width:255px;
@@ -522,7 +605,12 @@ footer{
     background:url(https://github.com/hexschool/webLayoutTraining1st/blob/master/perfume-week6/products12.jpg?raw=true) ;
     background-size: cover;
     background-position:-30px 0px;
+    @media (max-width:768px){
+        width:165px;
+        padding: 82.5px 0px;
+    }
 }
+
 
 //頁碼
 .product-page{
