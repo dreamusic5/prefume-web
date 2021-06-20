@@ -56,8 +56,33 @@ table {
           box-sizing: border-box;
 }
 
+.font-size-1 {
+  font-size: 16px;
+  line-height: 24px;
+}
+
+.font-size-2 {
+  font-size: 20px;
+  line-height: 30px;
+}
+
+.font-size-3 {
+  font-size: 24px;
+  line-height: 36px;
+}
+
+.font-size-4 {
+  font-size: 32px;
+  line-height: 48px;
+}
+
+.font-size-5 {
+  font-size: 40px;
+  line-height: 60px;
+}
+
 .wrap {
-  width: 1920px;
+  max-width: 1940px;
   font-family: "SF Pro Text", "Microsoft JhengHei";
   margin: 0 auto;
 }
@@ -67,29 +92,15 @@ a {
   display: block;
 }
 
-.font-size-1 {
-  font-size: 16px;
-  line-height: 24px;
-}
-
-.font-size-2 {
-  font-style: 20px;
-  line-height: 30px;
-}
-
-.font-size-3 {
-  font-style: 24px;
-  line-height: 36px;
-}
-
-.font-size-4 {
-  font-style: 32px;
-  line-height: 48px;
-}
-
-.font-size-5 {
-  font-size: 40px;
-  line-height: 60px;
+.container {
+  max-width: 1140px;
+  padding: 0px 15px 0px 15px;
+  margin: 0 auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
 }
 
 .space-between {
@@ -111,11 +122,11 @@ a {
 }
 
 header {
-  padding: 9px 405px;
+  padding: 9px 0px;
 }
 
 header h1 a img {
-  width: 128px;
+  max-width: 128px;
   height: auto;
 }
 
@@ -131,25 +142,79 @@ header h1 a img {
 
 .nav li a {
   color: #8D8D8D;
+  position: relative;
 }
 
 .nav li a :hover {
   color: #916019;
 }
 
+.nav em, .nav .ham-icon {
+  display: none;
+}
+
+.nav .ham-icon {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.nav .ham-icon i {
+  font-size: 30px;
+}
+
+@media (max-width: 768px) {
+  .nav span {
+    display: none;
+  }
+  .nav .moble-none {
+    display: none;
+  }
+  .nav .cart-number {
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    background: red;
+    color: #FFF;
+    border-radius: 100%;
+  }
+  .nav .ham-icon {
+    display: block;
+  }
+}
+
 .banner {
-  height: 870px;
+  padding: 435px 0px;
   background: url(https://images.unsplash.com/photo-1588159343745-445ae0b16383?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=889&q=80);
   background-size: cover;
-  position: relative;
   color: #FFFFFF;
 }
 
+@media (max-width: 768px) {
+  .banner {
+    padding: 240px 0px;
+  }
+}
+
 .banner-content {
-  width: 445px;
-  position: absolute;
-  right: 405px;
-  top: 295px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+}
+
+.banner-content h2, .banner-content p, .banner-content a {
+  max-width: 445px;
 }
 
 .banner-content a {
@@ -162,30 +227,33 @@ header h1 a img {
   border: 2px solid #FFFFFF;
   color: #FFFFFF;
   border-radius: 50px;
+  padding: 5px;
 }
 
 .banner-content a:hover {
   background: rgba(255, 255, 255, 0.3);
 }
 
-.container {
-  padding: 60px 405px;
+.item-container {
+  max-width: 1110px;
+  margin: 0 auto;
+  padding: 60px 0px;
 }
 
-.container li h3 {
+.item-container li h3 {
   font-weight: bold;
 }
 
-.container li p {
+.item-container li p {
   margin-bottom: 16px;
 }
 
-.container .item-content {
+.item-container .item-content {
   width: 350px;
   padding: 0px 100px;
 }
 
-.container .flex-row {
+.item-container .flex-row {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -195,13 +263,13 @@ header h1 a img {
           flex-direction: row-reverse;
 }
 
-.container .plan {
+.item-container .plan {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
 }
 
-.container .plan-content {
+.item-container .plan-content {
   width: 350px;
   padding-left: 100px;
   display: -webkit-box;
@@ -216,22 +284,15 @@ header h1 a img {
           justify-content: center;
 }
 
-.container .plan-step li {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+.item-container .plan-step li {
   padding-bottom: 52px;
 }
 
-.container .plan-step li h5 {
+.item-container .plan-step li h5 {
   font-weight: bold;
 }
 
-.container .plan-btn {
+.item-container .plan-btn {
   margin-top: 8px;
   text-align: center;
   font-weight: bolder;
@@ -241,7 +302,7 @@ header h1 a img {
   padding: 18px 0px;
 }
 
-.container .plan-btn:hover {
+.item-container .plan-btn:hover {
   background: rgba(153, 153, 153, 0.3);
 }
 
@@ -253,9 +314,24 @@ header h1 a img {
   border-bottom: 1px solid #916019;
 }
 
+@media (max-width: 768px) {
+  .mobile-item {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+}
+
 .item-img-1 {
   width: 555px;
-  height: 555px;
+  padding: 277.5px 0px;
   background: url(https://images.unsplash.com/photo-1563170351-be82bc888aa4?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=676&q=80);
   background-size: cover;
   background-position: 0px -30px;
@@ -263,7 +339,7 @@ header h1 a img {
 
 .item-img-2 {
   width: 555px;
-  height: 555px;
+  padding: 277.5px 0px;
   background: url(https://images.unsplash.com/photo-1544468266-6a8948003cd7?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=753&q=80);
   background-size: cover;
   background-position: -130px 0px;
@@ -271,21 +347,21 @@ header h1 a img {
 
 .item-img-3 {
   width: 555px;
-  height: 555px;
+  padding: 277.5px 0px;
   background: url(https://images.unsplash.com/photo-1585120040315-2241b774ad0f?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80);
   background-size: cover;
 }
 
 .plan-img {
   width: 555px;
-  height: 1080px;
+  padding: 540px 0px;
   background: url(https://images.unsplash.com/photo-1542038382126-77ae2819338d?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80);
   background-size: cover;
   background-position: -100px 0px;
 }
 
 .product {
-  padding: 40px 391px;
+  padding: 40px 0px;
   background: #E0E0E0;
 }
 
@@ -311,7 +387,6 @@ header h1 a img {
 .product .product-price-original {
   margin-left: 8px;
   color: #8D8D8D;
-  text-decoration: line-through;
 }
 
 .product .sold-out {
@@ -322,9 +397,22 @@ header h1 a img {
   color: #FFFFFF;
 }
 
+@media (max-width: 768px) {
+  .product .sold-out {
+    padding: 157px 55px;
+  }
+}
+
 .product-img-1, .product-img-2, .product-img-3 {
   width: 350px;
   height: 540px;
+}
+
+@media (max-width: 768px) {
+  .product-img-1, .product-img-2, .product-img-3 {
+    width: 344px;
+    height: 350px;
+  }
 }
 
 .product-img-1 {
@@ -332,9 +420,21 @@ header h1 a img {
   background-size: cover;
 }
 
+@media (max-width: 768px) {
+  .product-img-1 {
+    background-position: 0px -160px;
+  }
+}
+
 .product-img-2 {
   background: url(https://images.unsplash.com/photo-1556228720-da4e85f25e15?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=638&q=80);
   background-size: cover;
+}
+
+@media (max-width: 768px) {
+  .product-img-2 {
+    background-position: 0px -120px;
+  }
 }
 
 .product-img-3 {
@@ -343,22 +443,21 @@ header h1 a img {
   background-position: -25px 20px;
 }
 
+@media (max-width: 768px) {
+  .product-img-3 {
+    background-position: 0px -60px;
+  }
+}
+
 .recycle {
-  padding: 60px 405px;
+  padding: 60px 0px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
 }
 
 .recycle .recycle-content {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
   padding-left: 30px;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
@@ -374,19 +473,28 @@ header h1 a img {
 
 .recycle-img {
   min-width: 730px;
-  height: 520px;
+  padding: 260px 0px;
   background: url(https://images.unsplash.com/photo-1594913615593-e4b8c44625be?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=750&q=80);
   background-size: cover;
+}
+
+@media (max-width: 768px) {
+  .recycle-img {
+    min-width: 345px;
+  }
 }
 
 .subscribe {
   background: url(https://images.unsplash.com/photo-1532413992378-f169ac26fff0?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80) no-repeat;
   background-size: cover;
-  background-position: 0px -650px;
+  background-position: 0px -350px;
+  padding: 300px 0px;
 }
 
-.subscribe .subscribe-content {
-  padding: 372px 1165px 112px 405px;
+@media (max-width: 768px) {
+  .subscribe {
+    background-position: 0px;
+  }
 }
 
 .subscribe h4 {
@@ -425,7 +533,12 @@ header h1 a img {
 footer {
   background: #916000;
   color: #FFFFFF;
-  padding: 20px 405px 22px 405px;
+}
+
+footer .container {
+  max-width: 1110px;
+  padding: 20px 0px 22px 0px;
+  margin: 0 auto;
 }
 
 footer .footer-logo {
@@ -443,6 +556,12 @@ footer .footer-logo img {
 footer .footer-logo p {
   font-size: 14px;
   line-height: 21px;
+}
+
+@media (max-width: 768px) {
+  footer .footer-menu {
+    display: none;
+  }
 }
 
 footer .footer-menu ul {
@@ -473,7 +592,8 @@ footer .footer-menu a:hover {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  padding-left: 405px;
+  max-width: 1110px;
+  margin: 0 auto;
 }
 
 .menu-brand li a {
@@ -488,7 +608,9 @@ footer .footer-menu a:hover {
 }
 
 .product-container {
-  padding: 80px 405px 60px 405px;
+  padding: 80px 0px 60px 0px;
+  max-width: 1110px;
+  margin: 0 auto;
 }
 
 .product-item-container ul {
@@ -510,19 +632,21 @@ footer .footer-menu a:hover {
 .product-item-container .product-item-original-price {
   margin-left: 8px;
   color: #8D8D8D;
-  text-decoration: line-through;
 }
 
 .product-item-container .product-item-icon {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
 }
 
 .product-item-container .product-item-icon a {
   font-size: 18px;
   color: #916019;
-  margin: 3px 5px 58.65px 0px;
+  margin: 3px 12px 58.65px 0px;
 }
 
 .product-item-container .product-item-icon a:hover {
@@ -531,7 +655,7 @@ footer .footer-menu a:hover {
 
 .product-item1-img {
   width: 255px;
-  height: 255px;
+  padding: 127.5px 0px;
   background: url(https://github.com/hexschool/webLayoutTraining1st/blob/master/perfume-week6/products1.jpg?raw=true);
   background-size: cover;
   background-position: 0px -50px;
@@ -539,7 +663,7 @@ footer .footer-menu a:hover {
 
 .product-item2-img {
   width: 255px;
-  height: 255px;
+  padding: 127.5px 0px;
   background: url(https://github.com/hexschool/webLayoutTraining1st/blob/master/perfume-week6/index6.jpg?raw=true);
   background-size: cover;
   background-position: 0px -120px;
@@ -547,7 +671,7 @@ footer .footer-menu a:hover {
 
 .product-item3-img {
   width: 255px;
-  height: 255px;
+  padding: 127.5px 0px;
   background: url(https://github.com/hexschool/webLayoutTraining1st/blob/master/perfume-week6/products3.jpg?raw=true);
   background-size: cover;
   background-position: 0px -30px;
@@ -555,14 +679,14 @@ footer .footer-menu a:hover {
 
 .product-item4-img {
   width: 255px;
-  height: 255px;
+  padding: 127.5px 0px;
   background: url(https://github.com/hexschool/webLayoutTraining1st/blob/master/perfume-week6/products4.jpg?raw=true);
   background-size: cover;
 }
 
 .product-item5-img {
   width: 255px;
-  height: 255px;
+  padding: 127.5px 0px;
   background: url(https://github.com/hexschool/webLayoutTraining1st/blob/master/perfume-week6/products5.jpg?raw=true);
   background-size: cover;
   background-position: 0px -30px;
@@ -570,14 +694,14 @@ footer .footer-menu a:hover {
 
 .product-item6-img {
   width: 255px;
-  height: 255px;
+  padding: 127.5px 0px;
   background: url(https://github.com/hexschool/webLayoutTraining1st/blob/master/perfume-week6/index2.jpg?raw=true);
   background-size: cover;
 }
 
 .product-item7-img {
   width: 255px;
-  height: 255px;
+  padding: 127.5px 0px;
   background: url(https://github.com/hexschool/webLayoutTraining1st/blob/master/perfume-week6/products7.jpg?raw=true);
   background-size: cover;
   background-position: 0px -20px;
@@ -585,7 +709,7 @@ footer .footer-menu a:hover {
 
 .product-item8-img {
   width: 255px;
-  height: 255px;
+  padding: 127.5px 0px;
   background: url(https://github.com/hexschool/webLayoutTraining1st/blob/master/perfume-week6/products8.jpg?raw=true);
   background-size: cover;
   background-position: -55px 0px;
@@ -593,14 +717,14 @@ footer .footer-menu a:hover {
 
 .product-item9-img {
   width: 255px;
-  height: 255px;
+  padding: 127.5px 0px;
   background: url(https://github.com/hexschool/webLayoutTraining1st/blob/master/perfume-week6/index9.jpg?raw=true);
   background-size: cover;
 }
 
 .product-item10-img {
   width: 255px;
-  height: 255px;
+  padding: 127.5px 0px;
   background: url(https://github.com/hexschool/webLayoutTraining1st/blob/master/perfume-week6/products10.jpg?raw=true);
   background-size: cover;
   background-position: -20px -20px;
@@ -608,7 +732,7 @@ footer .footer-menu a:hover {
 
 .product-item11-img {
   width: 255px;
-  height: 255px;
+  padding: 127.5px 0px;
   background: url(https://github.com/hexschool/webLayoutTraining1st/blob/master/perfume-week6/products11.jpg?raw=true);
   background-size: cover;
   background-position: 0px -30px;
@@ -616,7 +740,7 @@ footer .footer-menu a:hover {
 
 .product-item12-img {
   width: 255px;
-  height: 255px;
+  padding: 127.5px 0px;
   background: url(https://github.com/hexschool/webLayoutTraining1st/blob/master/perfume-week6/products12.jpg?raw=true);
   background-size: cover;
   background-position: -30px 0px;

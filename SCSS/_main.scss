@@ -1,5 +1,5 @@
 .wrap{
-    width: 1920px;
+    max-width: 1940px;
     font-family: $main-font;
     margin: 0 auto;
 }
@@ -8,27 +8,12 @@ a{
     text-decoration: none;
     display: block;
 }
-
-//字型大小
-.font-size-1{
-    font-size: 16px;
-     line-height: 24px;
-}
-.font-size-2{
-    font-style: 20px;
-    line-height: 30px;
-}
-.font-size-3{
-    font-style: 24px;
-    line-height: 36px;
-}
-.font-size-4{
-    font-style: 32px;
-    line-height: 48px;
-}
-.font-size-5{
-    font-size: 40px;
-    line-height: 60px;
+.container{
+    max-width: 1140px;
+    padding: 0px 15px 0px 15px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
 }
 
 //通用設定
@@ -44,9 +29,9 @@ a{
 //首頁
 //header
 header{
-    padding: 9px 405px;
+    padding: 9px 0px;
     h1 a img{
-        width: 128px;
+        max-width: 128px;
         height: auto;
     }
 }
@@ -57,25 +42,64 @@ header{
     }
     li a{
         color: $menu-main-color;
+        position: relative;
     }
     li a :hover{
         color: $footer-main-color;
     }
+    em,.ham-icon{
+        display: none;
+    }
+    .ham-icon{
+        align-items: center;
+        i{
+            font-size: 30px;
+        }
+    }
+}
+@media(max-width:768px) {  
+    .nav{
+        span{
+            display: none;
+        }
+        .moble-none{
+            display: none;
+        }
+        .cart-number{
+            display: block;
+            position: absolute;
+            top: 0;
+            right: 0;
+            background: red;
+            color: #FFF;
+            border-radius: 100%;
+        }
+        .ham-icon{
+            display: block;
+        }
+    }
+    
 }
 
 //banner
 .banner{
-    height: 870px;
+    padding: 435px 0px;
     background: url(https://images.unsplash.com/photo-1588159343745-445ae0b16383?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=889&q=80) ;
     background-size: cover;
-    position:relative;
     color: #FFFFFF;
+    @media(max-width:768px){
+        padding:240px 0px;
+    }
+
 }
 .banner-content{
-    width: 445px;
-    position: absolute;
-    right: 405px;
-    top: 295px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-end;
+    h2,p,a{
+        max-width: 445px;
+    }
     a{
         margin-top: 16px;
         height: 60px;
@@ -84,15 +108,18 @@ header{
         border: 2px solid #FFFFFF;
         color: #FFFFFF;
         border-radius: 50px;
+        padding: 5px;
     }
     a:hover{
         background: rgba($color: #ffffff, $alpha: 0.3);
     }
 }
 
-//container
-.container{
-    padding: 60px 405px;
+//item-container
+.item-container{
+    max-width: 1110px;
+    margin: 0 auto;
+    padding: 60px 0px;
     li{
         h3{
             font-weight: bold;
@@ -100,6 +127,7 @@ header{
         p{
             margin-bottom: 16px;
         }
+        
     }
     .item-content{
         width: 350px;
@@ -121,8 +149,6 @@ header{
         justify-content: center;
     }
     .plan-step li{
-        display: flex;
-        flex-direction: column;
         padding-bottom: 52px;
     }
     .plan-step li h5{
@@ -147,31 +173,40 @@ header{
         border-bottom: 1px solid $footer-main-color;
     }
 }
+@media(max-width:768px){
+    .mobile-item{
+        display: flex;
+        flex-direction: column;
+        justify-content: center 
+    }
+    
+}
 
-//container套入圖片
+//item-container套入圖片
 .item-img-1{
     width: 555px;
-    height: 555px;
+    padding: 277.5px 0px;
+    // height: 555px;
     background:url(https://images.unsplash.com/photo-1563170351-be82bc888aa4?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=676&q=80);
     background-size: cover;
     background-position:0px -30px;
 }
 .item-img-2{
     width: 555px;
-    height: 555px;
+    padding: 277.5px 0px;
     background:url(https://images.unsplash.com/photo-1544468266-6a8948003cd7?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=753&q=80) ;
     background-size: cover;
     background-position:-130px 0px;
 }
 .item-img-3{
     width: 555px;
-    height: 555px;
+    padding: 277.5px 0px;
     background:url(https://images.unsplash.com/photo-1585120040315-2241b774ad0f?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80) ;
     background-size: cover;
 }
 .plan-img{
     width: 555px;
-    height: 1080px;
+    padding: 540px 0px;
     background:url(https://images.unsplash.com/photo-1542038382126-77ae2819338d?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80) ;
     background-size: cover;
     background-position:-100px 0px;
@@ -180,7 +215,7 @@ header{
 
 //product區塊
 .product{
-    padding: 40px 391px;
+    padding: 40px 0px;
     background: $background-color;
     .product-item{
         display: flex;
@@ -198,7 +233,6 @@ header{
     .product-price-original{
         margin-left: 8px;
         color: $menu-main-color;
-        text-decoration: line-through;
     }
     .sold-out{
         padding: 252px 95px;
@@ -206,6 +240,9 @@ header{
         font-weight: bold;
         text-align: center;
         color: #FFFFFF;
+        @media(max-width:768px){
+            padding: 157px 55px;
+        }
     }
 }
 
@@ -213,29 +250,41 @@ header{
 .product-img-1,.product-img-2,.product-img-3{
     width: 350px;
     height: 540px;
+    // padding: 270px 0px;
+    @media(max-width:768px){
+       width: 344px;
+       height: 350px;
+    }
 }
 .product-img-1{
     background:url(https://images.unsplash.com/photo-1530630458144-014709e10016?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=634&q=80);
     background-size: cover;
+    @media(max-width:768px){
+        background-position: 0px -160px;
+    }
 }
 .product-img-2{
     background:url(https://images.unsplash.com/photo-1556228720-da4e85f25e15?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=638&q=80);
     background-size: cover;
+    @media(max-width:768px){
+        background-position: 0px -120px;
+    }
 }
 .product-img-3{
     background:url(https://images.unsplash.com/photo-1559264730-1533a6ec0433?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=675&q=80);
     background-size: cover;
     background-position:-25px 20px;
+    @media(max-width:768px){
+        background-position: 0px -60px;
+    }
 }
 
 //recycle區塊
 .recycle{
-    padding: 60px 405px;
+    padding: 60px 0px;
     display: flex;
     .recycle-content{
-        display: flex;
         padding-left: 30px;
-        flex-direction: column ;
         justify-content: center;
     }
     h3{
@@ -248,18 +297,23 @@ header{
 }
 .recycle-img{
     min-width: 730px;
-    height: 520px;
+    padding: 260px 0px ;
     background:url(https://images.unsplash.com/photo-1594913615593-e4b8c44625be?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=750&q=80);
     background-size: cover;
+    @media(max-width:768px){
+        min-width: 345px;
+
+    }
 }
 
 //subscribe區塊
 .subscribe{
     background:url(https://images.unsplash.com/photo-1532413992378-f169ac26fff0?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80) no-repeat;
     background-size: cover;
-    background-position:0px -650px;
-    .subscribe-content{
-        padding: 372px 1165px 112px 405px;
+    background-position:0px -350px;
+    padding: 300px 0px;
+    @media(max-width:768px){
+        background-position:0px;
     }
     h4{
         color: $menu-main-color;
@@ -267,6 +321,7 @@ header{
         font-weight: bold;
     }
     .subscribe-btn{
+        // margin: 0px;
         display: flex;
         height: 60px;
         input{
@@ -291,9 +346,14 @@ header{
 
 //footer區塊
 footer{
+    
     background: #916000;
     color:#FFFFFF;
-    padding: 20px 405px 22px 405px;
+    .container{
+        max-width: 1110px;
+        padding: 20px 0px 22px 0px;
+        margin: 0 auto;
+    }
     .footer-logo{
         display: flex;
         img{
@@ -307,6 +367,9 @@ footer{
         }
     }
     .footer-menu{
+        @media (max-width:768px) {
+            display: none;
+        }
         ul{
             flex-direction: row;
         }
@@ -329,7 +392,8 @@ footer{
     background: #916000;
     ul{
         display: flex;
-        padding-left: 405px;
+        max-width: 1110px;
+        margin: 0 auto;
     }
     li a{
         margin-right: 28px;
@@ -343,7 +407,9 @@ footer{
 }
 //產品列
 .product-container{
-    padding:80px 405px 60px 405px ;
+    padding:80px 0px 60px 0px ;
+    max-width: 1110px;
+    margin: 0 auto;
 }
 .product-item-container{
     ul{
@@ -358,14 +424,14 @@ footer{
     .product-item-original-price{
         margin-left: 8px;
         color: $menu-main-color;
-        text-decoration: line-through;
     }
     .product-item-icon {
         display: flex;
+        justify-content: flex-start;
         a{
             font-size: 18px;
             color: $footer-main-color;
-            margin:3px 5px 58.65px 0px;
+            margin:3px 12px 58.65px 0px;
             &:hover{
                 color: $menu-main-color;
             }
@@ -377,81 +443,82 @@ footer{
 //產品列圖
 .product-item1-img{
     width:255px;
-    height: 255px;
+    padding: 127.5px 0px;
+    // height: 255px;
     background:url(https://github.com/hexschool/webLayoutTraining1st/blob/master/perfume-week6/products1.jpg?raw=true) ;
     background-size: cover;
     background-position:0px -50px;
 }
 .product-item2-img{
     width:255px;
-    height: 255px;
+    padding: 127.5px 0px;
     background:url(https://github.com/hexschool/webLayoutTraining1st/blob/master/perfume-week6/index6.jpg?raw=true) ;
     background-size: cover;
     background-position:0px -120px;
 }
 .product-item3-img{
     width:255px;
-    height: 255px;
+    padding: 127.5px 0px;
     background:url(https://github.com/hexschool/webLayoutTraining1st/blob/master/perfume-week6/products3.jpg?raw=true) ;
     background-size: cover;
     background-position:0px -30px;
 }
 .product-item4-img{
     width:255px;
-    height: 255px;
+    padding: 127.5px 0px;
     background:url(https://github.com/hexschool/webLayoutTraining1st/blob/master/perfume-week6/products4.jpg?raw=true) ;
     background-size: cover;
 }
 .product-item5-img{
     width:255px;
-    height: 255px;
+    padding: 127.5px 0px;
     background:url(https://github.com/hexschool/webLayoutTraining1st/blob/master/perfume-week6/products5.jpg?raw=true) ;
     background-size: cover;
     background-position:0px -30px;
 }
 .product-item6-img{
     width:255px;
-    height: 255px;
+    padding: 127.5px 0px;
     background:url(https://github.com/hexschool/webLayoutTraining1st/blob/master/perfume-week6/index2.jpg?raw=true) ;
     background-size: cover;
 }
 .product-item7-img{
     width:255px;
-    height: 255px;
+    padding: 127.5px 0px;
     background:url(https://github.com/hexschool/webLayoutTraining1st/blob/master/perfume-week6/products7.jpg?raw=true) ;
     background-size: cover;
     background-position:0px -20px;
 }
 .product-item8-img{
     width:255px;
-    height: 255px;
+    padding: 127.5px 0px;
     background:url(https://github.com/hexschool/webLayoutTraining1st/blob/master/perfume-week6/products8.jpg?raw=true) ;
     background-size: cover;
     background-position:-55px 0px;
 }
 .product-item9-img{
     width:255px;
-    height: 255px;
+    padding: 127.5px 0px;
     background:url(https://github.com/hexschool/webLayoutTraining1st/blob/master/perfume-week6/index9.jpg?raw=true) ;
     background-size: cover;
 }
 .product-item10-img{
     width:255px;
-    height: 255px;
+    padding: 127.5px 0px;
     background:url(https://github.com/hexschool/webLayoutTraining1st/blob/master/perfume-week6/products10.jpg?raw=true) ;
     background-size: cover;
     background-position:-20px -20px;
 }
 .product-item11-img{
     width:255px;
-    height: 255px;
+    padding: 127.5px 0px;
     background:url(https://github.com/hexschool/webLayoutTraining1st/blob/master/perfume-week6/products11.jpg?raw=true) ;
     background-size: cover;
     background-position:0px -30px;
 }
 .product-item12-img{
     width:255px;
-    height: 255px;
+    padding: 127.5px 0px;
     background:url(https://github.com/hexschool/webLayoutTraining1st/blob/master/perfume-week6/products12.jpg?raw=true) ;
     background-size: cover;
     background-position:-30px 0px;
