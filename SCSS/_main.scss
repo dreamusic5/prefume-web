@@ -67,10 +67,17 @@ header{
             display: block;
             position: absolute;
             top: 0;
-            right: 0;
+            right: -5px;
             background: red;
             color: #FFF;
             border-radius: 100%;
+            font-size: 14px;
+            line-height: 14px;
+            width: 14px;
+            text-align: center;
+            &:hover{
+                color: #FFF;
+            }
         }
         .ham-icon{
             display: block;
@@ -78,6 +85,33 @@ header{
     }
     
 }
+//漢堡選單
+.dropdown {
+    position: absolute;
+    left: 0;
+    top: 7%;
+    width: 100%;
+    max-height: 0px;
+    transition: all 0.8s;
+    overflow: hidden;
+    z-index: 120;
+  }
+  .dropdown.active {
+    max-height: 250px;
+  }
+  
+  .dropdown li a {
+    display: block;
+    background: #707070;
+    color: #FFFFFF;
+    border-top: 1px solid #FFFFFF;
+    padding: 16px 0;
+    text-decoration: none;
+    text-align: center;
+  }
+  .dropdown li a:hover {
+    background: $footer-main-color;
+  }
 
 //banner
 .banner{
@@ -251,8 +285,7 @@ header{
         font-weight: bold;
     }
     .product-brand{
-        margin-bottom: 16px;
-        
+        margin-bottom: 16px;   
     }
 
     .product-price-original{

@@ -169,14 +169,51 @@ header h1 a img {
     display: block;
     position: absolute;
     top: 0;
-    right: 0;
+    right: -5px;
     background: red;
     color: #FFF;
     border-radius: 100%;
+    font-size: 14px;
+    line-height: 14px;
+    width: 14px;
+    text-align: center;
+  }
+  .nav .cart-number:hover {
+    color: #FFF;
   }
   .nav .ham-icon {
     display: block;
   }
+}
+
+.dropdown {
+  position: absolute;
+  left: 0;
+  top: 7%;
+  width: 100%;
+  max-height: 0px;
+  -webkit-transition: all 0.8s;
+  transition: all 0.8s;
+  overflow: hidden;
+  z-index: 120;
+}
+
+.dropdown.active {
+  max-height: 250px;
+}
+
+.dropdown li a {
+  display: block;
+  background: #707070;
+  color: #FFFFFF;
+  border-top: 1px solid #FFFFFF;
+  padding: 16px 0;
+  text-decoration: none;
+  text-align: center;
+}
+
+.dropdown li a:hover {
+  background: #916019;
 }
 
 .banner {
